@@ -190,6 +190,33 @@ tr.group-row td{background:var(--paper);font-family:'IBM Plex Mono',monospace;fo
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:9px 16px;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--rule)}
 .table-foot{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);padding:16px 2px 0;line-height:1.8}
 
+/* study divider band */
+.study-head{border-top:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:50px 0 54px}
+.study-head .eyebrow{color:#8E99A7;margin-bottom:18px}
+.study-head .eyebrow::after{background:#39434F}
+.study-head h2{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(34px,5.4vw,68px);letter-spacing:-.02em;text-transform:uppercase;line-height:.96;max-width:18ch}
+.study-head h2 em{font-style:normal;color:var(--red)}
+.study-head .dek{color:#AEB9C6;font-size:16.5px;margin-top:18px;max-width:66ch}
+.study-head .dek strong{color:#fff}
+
+/* p-value chips */
+.pchip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.06em;padding:3px 9px 4px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+  white-space:nowrap;text-transform:none}
+.pchip.na{background:transparent;color:var(--ink-soft);border-color:var(--rule)}
+.pchip sup{font-size:8px}
+
+/* appendix B significance table */
+.sig{padding:10px 0 70px;background:#F2F4F7}
+.sig .eyebrow{margin:34px 0 14px}
+.sig h2{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(24px,3.4vw,38px);letter-spacing:-.02em;text-transform:uppercase;line-height:1}
+.sig .sub{color:var(--ink-soft);margin:12px 0 26px;max-width:66ch;font-size:15.5px}
+.sig table{min-width:820px}
+.sig td.verdict{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;white-space:nowrap}
+.sig .sig-yes{color:#0E6B33;font-weight:600}
+.sig .sig-no{color:var(--ink-soft)}
+.sig td.pv{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+
 /* footer */
 footer{border-top:2px solid var(--ink)}
 footer .wrap{padding:34px 28px 60px;display:grid;grid-template-columns:1fr 1fr;gap:30px;font-size:13.5px;color:var(--ink-soft)}
@@ -208,7 +235,9 @@ footer p{max-width:58ch}
       <a href="#gender">Gender</a>
       <a href="#engines">Engines</a>
       <a href="#extremes">Extremes</a>
+      <a href="#study2">Study 02</a>
       <a href="#table">All statistics</a>
+      <a href="#significance">Significance</a>
     </nav>
     <span>Jun 2026</span>
   </div>
@@ -224,8 +253,8 @@ footer p{max-width:58ch}
       The result is a synthetic population that looks almost nothing like the real one.
     </p>
     <div class="meta-row">
-      <div class="meta-cell"><div class="k">Engines tested</div><div class="v">2</div></div>
-      <div class="meta-cell"><div class="k">Findings</div><div class="v">7</div></div>
+      <div class="meta-cell"><div class="k">Studies</div><div class="v">2</div></div>
+      <div class="meta-cell"><div class="k">Findings</div><div class="v">12</div></div>
       <div class="meta-cell"><div class="k">Largest skew</div><div class="v">+34.7 pts</div></div>
       <div class="meta-cell"><div class="k">Female athletes</div><div class="v" style="color:var(--red)">0.0%</div></div>
     </div>
@@ -255,7 +284,7 @@ footer p{max-width:58ch}
 </section>
 
 <div class="wrap">
-  <div class="findings-head"><span>Findings Ledger</span><span>F.01 — F.07</span></div>
+  <div class="findings-head"><span>Study 01 · Image Engines · DALL-E × Imagen</span><span>F.01 — F.07</span></div>
 </div>
 
 <!-- ============ F.01 ============ -->
@@ -268,7 +297,7 @@ footer p{max-width:58ch}
 
     <div class="duo">
       <div class="chart-card grow" data-anim>
-        <div class="chart-title"><span>Generated images · racial composition</span></div>
+        <div class="chart-title"><span>Generated images · racial composition</span><span class="pchip">p &lt; 10⁻²⁴ vs census*</span></div>
         <svg viewBox="0 0 360 250" role="img" style="width:100%;height:auto" aria-label="Donut chart: Black 47.7%, White 23.2%, all other categories combined 29.1%">
           <g transform="translate(120,125)">
             <circle r="80" fill="none" stroke="#E2E6EB" stroke-width="38"/>
@@ -324,7 +353,7 @@ footer p{max-width:58ch}
           <text x="282" y="153" font-size="12.5" font-weight="600" fill="#46535F">23.2%</text>
           <text x="78" y="55" text-anchor="end" font-size="11.5" fill="#0E141B">~60%</text>
         </svg>
-        <p class="src">Black: +34.7 pts above census · White: −36.8 pts below census.</p>
+        <p class="src">Black: +34.7 pts above census · White: −36.8 pts below census. *One-proportion test, conservative — significant at p &lt; 10⁻²⁴ (Black) and p &lt; 10⁻¹³ (White) even if the full sample were only n=100; the audit's known floor is n≥498.</p>
       </div>
     </div>
   </div>
@@ -342,7 +371,7 @@ footer p{max-width:58ch}
       <div class="zero" aria-hidden="true">0</div>
       <div class="z-copy">
         <div class="h">Female share, by prompt</div>
-        <p>The red slivers below are the entire female result. Every one of the 498 portraits in these two prompts was coded male.</p>
+        <p>The red slivers below are the entire female result. Every one of the 498 portraits in these two prompts was coded male. Exact binomial test vs a 50/50 baseline: athlete p ≈ 10⁻⁶⁸, paramedic p ≈ 10⁻⁸¹, combined p ≈ 10⁻¹⁴⁹ — about as far from chance as a result can be.</p>
         <div class="zero-rows">
           <div class="zero-row"><span>ATHLETE</span><span class="zt" role="img" aria-label="0 percent female of 227 images"></span><b>0.0% · n=227</b></div>
           <div class="zero-row"><span>PARAMEDIC</span><span class="zt" role="img" aria-label="0 percent female of 271 images"></span><b>0.0% · n=271</b></div>
@@ -363,7 +392,7 @@ footer p{max-width:58ch}
 
     <div class="chart-card grow barchart" data-anim>
       <div class="chart-title"><span>Female share by prompt · % of images</span>
-        <span class="legend"><span><i style="background:var(--plum)"></i>Female</span></span>
+        <span class="legend"><span><i style="background:var(--plum)"></i>Female</span><span class="pchip">p &lt; 0.001 vs parity*</span></span>
       </div>
       <div class="ruler" aria-hidden="true"><span></span><span class="scale"><b style="left:0">0</b><b style="left:25%">25</b><b style="left:50%">50</b><b style="left:75%">75</b><b style="left:100%">100%</b></span><span></span></div>
       <div class="hbars">
@@ -372,7 +401,7 @@ footer p{max-width:58ch}
         <div class="hbar"><span class="lbl">PARAMEDIC</span><span class="track"><span class="fill is-zero"></span></span><span class="val zero">0.0%</span></div>
         <div class="hbar"><span class="lbl">ATHLETE</span><span class="track"><span class="fill is-zero"></span></span><span class="val zero">0.0%</span></div>
       </div>
-      <p class="src">Gender is not balanced across roles — it is rewired per stereotype, swinging from 0% to 94.5% depending on the job named.</p>
+      <p class="src">Gender is not balanced across roles — it is rewired per stereotype, swinging from 0% to 94.5% depending on the job named. *Neurosurgeon n undisclosed, but a 94.5% rate implies n≥18, which already yields p &lt; 0.001 vs 50/50; athlete and paramedic zeros are exact (p ≈ 10⁻⁶⁸, 10⁻⁸¹). Tech CEO at 56.6% is not testable without n.</p>
     </div>
   </div>
 </section>
@@ -413,7 +442,7 @@ footer p{max-width:58ch}
         <div class="hbar"><span class="lbl">IMAGEN · MALE</span><span class="track"><span class="fill" style="--w:47.5%;background:var(--teal)"></span><span class="census-mark" style="--x:50%"></span></span><span class="val">47.5%</span></div>
         <div class="hbar"><span class="lbl">IMAGEN · FEMALE</span><span class="track"><span class="fill" style="--w:52.5%;background:var(--plum)"></span><span class="census-mark" style="--x:50%"></span></span><span class="val">52.5%</span></div>
       </div>
-      <p class="src">Black rule = an even 50/50 split. Engine-level totals look mild — the extremes live inside individual prompts, where both engines follow identical patterns.</p>
+      <p class="src">Black rule = an even 50/50 split. Engine-level totals look mild — the extremes live inside individual prompts, where both engines follow identical patterns. Engine-level n was not disclosed, so the DALL-E–Imagen gap (8.6 pts) cannot be tested for significance from this output alone.</p>
     </div>
   </div>
 </section>
@@ -483,12 +512,181 @@ footer p{max-width:58ch}
 </section>
 </div>
 
+<!-- ============ STUDY 02 HEADER ============ -->
+<section class="study-head" id="study2">
+  <div class="wrap">
+    <p class="eyebrow">Study 02 · Semantic drift · 8 LLMs × 6 professions · 29 tests</p>
+    <h2>Same job. Add one adjective. <em>Watch the person change.</em></h2>
+    <p class="dek">Eight language models were asked to depict the same professions three ways — <strong>neutral</strong>, <strong>"highly skilled"</strong>, and <strong>"lowly skilled"</strong> — and the gender and race of each generated character was coded. All labels were normalized first ("Black" = "African American" = "African"), because the raw shift flags counted terminology swaps as demographic changes.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="findings-head"><span>Study 02 · Skill framing × demographics</span><span>S.01 — S.05</span></div>
+</div>
+
+<!-- ============ S.01 ============ -->
+<div class="fband">
+<section class="wrap finding">
+  <div class="f-id">S.01<small>Race × prestige · all tests</small></div>
+  <div class="f-body">
+    <h3>Black share tracks the prestige dial — p ≈ 0.001</h3>
+    <p class="lede">Black characters make up <strong>62.1%</strong> of "highly skilled" depictions, <strong>44.8%</strong> of neutral ones, and just <strong>24.1%</strong> of "lowly skilled" ones. Comparing highly→lowly directly: <strong>11 tests dropped the Black character, 0 adopted one</strong> — exact sign test p = 0.00098. The single statistically strongest result in either study.</p>
+
+    <div class="chart-card grow" data-anim>
+      <div class="chart-title"><span>Race share by skill framing · % of 29 tests</span>
+        <span class="legend"><span><i style="background:var(--blue)"></i>Black</span><span><i style="background:var(--gold)"></i>Asian</span><span><i style="background:var(--rust)"></i>Latina/o</span><span class="pchip">p ≈ 0.001*</span></span>
+      </div>
+      <svg viewBox="0 0 380 250" role="img" style="width:100%;height:auto" aria-label="Line chart across three skill framings. Black share rises from 24.1% at lowly skilled to 44.8% at baseline to 62.1% at highly skilled. Asian and Latino move in the opposite direction, peaking at lowly skilled.">
+        <g stroke="#E2E6EB" stroke-width="1">
+          <line x1="55" y1="205" x2="345" y2="205"/><line x1="55" y1="153.6" x2="345" y2="153.6"/>
+          <line x1="55" y1="102.1" x2="345" y2="102.1"/><line x1="55" y1="50.7" x2="345" y2="50.7"/>
+        </g>
+        <g font-size="10" fill="#7E8898">
+          <text x="48" y="208" text-anchor="end">0</text><text x="48" y="157" text-anchor="end">20</text>
+          <text x="48" y="105" text-anchor="end">40</text><text x="48" y="54" text-anchor="end">60</text>
+        </g>
+        <g stroke="#C2C9D2" stroke-width="1" stroke-dasharray="3 4">
+          <line x1="80" y1="30" x2="80" y2="205"/><line x1="195" y1="30" x2="195" y2="205"/><line x1="310" y1="30" x2="310" y2="205"/>
+        </g>
+        <g font-size="10" fill="#46535F">
+          <text x="80" y="226" text-anchor="middle">"LOWLY SKILLED"</text>
+          <text x="195" y="226" text-anchor="middle">NEUTRAL</text>
+          <text x="310" y="226" text-anchor="middle">"HIGHLY SKILLED"</text>
+        </g>
+        <!-- Latino -->
+        <polyline points="80,143.0 195,169.5 310,187.3" fill="none" stroke="#8A5A2C" stroke-width="3"/>
+        <circle cx="80" cy="143.0" r="4.5" fill="#8A5A2C"/><circle cx="195" cy="169.5" r="4.5" fill="#8A5A2C"/><circle cx="310" cy="187.3" r="4.5" fill="#8A5A2C"/>
+        <text x="318" y="191" font-size="11" fill="#8A5A2C" font-weight="600">6.9%</text>
+        <!-- Asian -->
+        <polyline points="80,125.3 195,160.8 310,169.5" fill="none" stroke="#A97B0B" stroke-width="3"/>
+        <circle cx="80" cy="125.3" r="4.5" fill="#A97B0B"/><circle cx="195" cy="160.8" r="4.5" fill="#A97B0B"/><circle cx="310" cy="169.5" r="4.5" fill="#A97B0B"/>
+        <text x="318" y="172" font-size="11" fill="#A97B0B" font-weight="600">13.8%</text>
+        <!-- Black -->
+        <polyline points="80,143.0 195,89.8 310,45.3" fill="none" stroke="#2742F5" stroke-width="4"/>
+        <circle cx="80" cy="143.0" r="5.5" fill="#2742F5"/><circle cx="195" cy="89.8" r="5.5" fill="#2742F5"/><circle cx="310" cy="45.3" r="5.5" fill="#2742F5"/>
+        <text x="318" y="49" font-size="12.5" fill="#2742F5" font-weight="600">62.1%</text>
+        <text x="68" y="135" font-size="11" fill="#2742F5" font-weight="600" text-anchor="end">24.1%</text>
+        <text x="195" y="78" font-size="11" fill="#2742F5" font-weight="600" text-anchor="middle">44.8%</text>
+      </svg>
+      <p class="src">*Exact two-sided sign test on paired highly→lowly transitions (11 left Black, 0 entered), p = 0.00098. Black at lowly (24.1%) vs Asian (31.0%) and Latina/o (24.1%): the categories swap places when the skill adjective flips.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ S.02 ============ -->
+<div class="fband alt">
+<section class="wrap finding">
+  <div class="f-id">S.02<small>Where "lowly skilled" goes</small></div>
+  <div class="f-body">
+    <h3>Low skill is offloaded onto Asian and Latina characters — every single time</h3>
+    <p class="lede">Of the 8 tests where the character stopped being Black under "lowly skilled" framing, <strong>100%</strong> landed on Asian (5) or Latina/o (3). Zero went to White, zero to any other category. At lowly-skilled, Asian becomes the single largest category (31.0%) — up from 13.8% under "highly skilled."</p>
+
+    <div class="chart-card grow barchart" data-anim>
+      <div class="chart-title"><span>Destination of characters that left "Black" at lowly skilled · % of departures</span></div>
+      <div class="ruler" aria-hidden="true"><span></span><span class="scale"><b style="left:0">0</b><b style="left:25%">25</b><b style="left:50%">50</b><b style="left:75%">75</b><b style="left:100%">100%</b></span><span></span></div>
+      <div class="hbars">
+        <div class="hbar"><span class="lbl">→ ASIAN</span><span class="track"><span class="fill" style="--w:62.5%;background:var(--gold)"></span></span><span class="val">62.5%</span></div>
+        <div class="hbar"><span class="lbl">→ LATINA/O</span><span class="track"><span class="fill" style="--w:37.5%;background:var(--rust)"></span></span><span class="val">37.5%</span></div>
+        <div class="hbar"><span class="lbl">→ WHITE</span><span class="track"><span class="fill is-zero"></span></span><span class="val zero">0.0%</span></div>
+        <div class="hbar"><span class="lbl">→ ANY OTHER</span><span class="track"><span class="fill is-zero"></span></span><span class="val zero">0.0%</span></div>
+      </div>
+      <p class="src">n=8 departures. The Asian-absorption trend alone (8 entered vs 3 left, highly→lowly) is directional but not yet significant: p = 0.227. Claude-4-sonnet shows the pattern most starkly — it refuses to assign any race for competent characters, then names "Alex Chen" for the incompetent one.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ S.03 ============ -->
+<div class="fband">
+<section class="wrap finding">
+  <div class="f-id">S.03<small>Gender × prestige</small></div>
+  <div class="f-body">
+    <h3>Women aren't replaced when skill drops. They're erased. (p = 0.016)</h3>
+    <p class="lede">Female share falls from <strong>82.8%</strong> (highly skilled) and <strong>75.9%</strong> (neutral) to <strong>51.7%</strong> at lowly skilled — <strong>7 tests left "female," 0 entered it</strong>, sign test p = 0.016. But the destination isn't "male": it's <strong>"unspecified,"</strong> which nearly triples to 37.9%. Models name a gender for excellence and go vague for incompetence.</p>
+
+    <div class="chart-card grow barchart" data-anim>
+      <div class="chart-title"><span>Gender coding by skill framing · % of 29 tests</span>
+        <span class="legend"><span><i style="background:var(--plum)"></i>Female</span><span><i style="background:#7E8898"></i>Unspecified</span><span class="pchip">p = 0.016*</span></span>
+      </div>
+      <div class="ruler" aria-hidden="true"><span></span><span class="scale"><b style="left:0">0</b><b style="left:25%">25</b><b style="left:50%">50</b><b style="left:75%">75</b><b style="left:100%">100%</b></span><span></span></div>
+      <div class="hbars">
+        <div class="hbar"><span class="lbl">FEMALE · HIGHLY</span><span class="track"><span class="fill" style="--w:82.8%;background:var(--plum)"></span></span><span class="val">82.8%</span></div>
+        <div class="hbar"><span class="lbl">FEMALE · NEUTRAL</span><span class="track"><span class="fill" style="--w:75.9%;background:var(--plum)"></span></span><span class="val">75.9%</span></div>
+        <div class="hbar"><span class="lbl">FEMALE · LOWLY</span><span class="track"><span class="fill" style="--w:51.7%;background:var(--plum)"></span></span><span class="val">51.7%</span></div>
+        <div class="hbar"><span class="lbl">UNSPEC · NEUTRAL</span><span class="track"><span class="fill" style="--w:13.8%;background:#7E8898"></span></span><span class="val">13.8%</span></div>
+        <div class="hbar"><span class="lbl">UNSPEC · LOWLY</span><span class="track"><span class="fill" style="--w:37.9%;background:#7E8898"></span></span><span class="val">37.9%</span></div>
+      </div>
+      <p class="src">*Exact sign test, baseline→lowly female departures (7 left / 0 entered). "Unspecified" includes refusal-style answers ("person," "individual," fill-in-the-blank templates).</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ S.04 ============ -->
+<div class="fband alt">
+<section class="wrap finding">
+  <div class="f-id">S.04<small>The missing demographic</small></div>
+  <div class="f-body">
+    <h3>Across 29 tests and 6 professions, no model ever depicted a competent man</h3>
+    <p class="lede">Male share at baseline: <strong>0.0%</strong>. At "highly skilled": <strong>0.0%</strong>. Including paramedic and construction worker. The only two men in 87 cells appear under <strong>"lowly skilled"</strong> framing — both construction workers. The image-engine study found zero women athletes; the language models are the exact mirror image, suggesting diversity steering that the skill adjective cracks open.</p>
+
+    <div class="slabs">
+      <div class="slab"><div class="n" style="color:var(--red)">0.0%</div><div class="t">Male · neutral framing · 0 of 29 tests</div></div>
+      <div class="slab"><div class="n" style="color:var(--red)">0.0%</div><div class="t">Male · "highly skilled" · 0 of 29 tests</div></div>
+      <div class="slab"><div class="n">6.9%</div><div class="t">Male · "lowly skilled" · 2 of 29 — both construction workers</div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ S.05 ============ -->
+<div class="fband">
+<section class="wrap finding">
+  <div class="f-id">S.05<small>Models &amp; data quality</small></div>
+  <div class="f-body">
+    <h3>Half the reported "gender drift" was terminology noise — and the models differ wildly</h3>
+    <p class="lede">After normalizing labels, race shift drops from 79.3% (raw) to <strong>72.4%</strong>, but gender shift collapses from 65.5% to <strong>37.9%</strong> — "woman"→"female" was being counted as drift. Among models: <strong>gpt-4.1 is most stable</strong> (42.9% race / 14.3% gender), <strong>claude-4-sonnet shifts race in 5/5 tests</strong>, and <strong>gpt-5.2 deflected the "lowly skilled" prompt in 5/5 tests</strong> — the only safety-correct behavior, at the cost of corrupting its cells.</p>
+
+    <div class="duo">
+      <div class="chart-card grow barchart" data-anim>
+        <div class="chart-title"><span>Shift rate: raw coding vs normalized · % of tests</span>
+          <span class="legend"><span><i style="background:var(--ink)"></i>Raw</span><span><i style="background:var(--blue)"></i>Normalized</span></span>
+        </div>
+        <div class="ruler" aria-hidden="true"><span></span><span class="scale"><b style="left:0">0</b><b style="left:25%">25</b><b style="left:50%">50</b><b style="left:75%">75</b><b style="left:100%">100%</b></span><span></span></div>
+        <div class="hbars">
+          <div class="hbar"><span class="lbl">RACE · RAW</span><span class="track"><span class="fill" style="--w:79.3%;background:var(--ink)"></span></span><span class="val">79.3%</span></div>
+          <div class="hbar"><span class="lbl">RACE · NORM.</span><span class="track"><span class="fill" style="--w:72.4%;background:var(--blue)"></span></span><span class="val">72.4%</span></div>
+          <div class="hbar"><span class="lbl">GENDER · RAW</span><span class="track"><span class="fill" style="--w:65.5%;background:var(--ink)"></span></span><span class="val">65.5%</span></div>
+          <div class="hbar"><span class="lbl">GENDER · NORM.</span><span class="track"><span class="fill" style="--w:37.9%;background:var(--blue)"></span></span><span class="val">37.9%</span></div>
+        </div>
+        <p class="src">Normalization merges synonyms ("black"/"african american"/"african"; "woman"/"female"). Race drift survives it. Much of the gender drift doesn't.</p>
+      </div>
+
+      <div class="chart-card grow barchart" data-anim>
+        <div class="chart-title"><span>Race-shift rate by model · normalized · % of own tests</span></div>
+        <div class="ruler" aria-hidden="true"><span></span><span class="scale"><b style="left:0">0</b><b style="left:25%">25</b><b style="left:50%">50</b><b style="left:75%">75</b><b style="left:100%">100%</b></span><span></span></div>
+        <div class="hbars">
+          <div class="hbar"><span class="lbl">CLAUDE-4-SONNET</span><span class="track"><span class="fill" style="--w:100%;background:var(--red)"></span></span><span class="val">100%</span></div>
+          <div class="hbar"><span class="lbl">GEMINI-2.5-PRO</span><span class="track"><span class="fill" style="--w:100%;background:var(--red)"></span></span><span class="val">100%</span></div>
+          <div class="hbar"><span class="lbl">GPT-4O-MINI</span><span class="track"><span class="fill" style="--w:71.4%;background:var(--census)"></span></span><span class="val">71.4%</span></div>
+          <div class="hbar"><span class="lbl">GPT-5.2</span><span class="track"><span class="fill" style="--w:60%;background:var(--census)"></span></span><span class="val">60.0%</span></div>
+          <div class="hbar"><span class="lbl">GPT-4.1</span><span class="track"><span class="fill" style="--w:42.9%;background:var(--teal)"></span></span><span class="val">42.9%</span></div>
+        </div>
+        <p class="src">n per model: claude-4-sonnet 5, gemini-2.5-pro 2, gpt-4o-mini 7, gpt-5.2 5, gpt-4.1 7. Single-test models (o1, o3-mini, gpt-4o: 100% each) omitted from the chart. Neurosurgeon shifted race in 5/5 tests; paramedic shifted gender in 0/4.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
 <!-- ============ MASTER TABLE ============ -->
 <section class="master" id="table">
   <div class="wrap">
     <p class="eyebrow">Appendix A · Complete dataset</p>
     <h2>Every statistic in the audit</h2>
-    <p class="sub">All percentages reported by the source run, with U.S. baselines and deviations where a baseline exists. Sample sizes (n) shown where disclosed. Sorted by finding.</p>
+    <p class="sub">Every figure from both studies: the image-engine audit (F-rows) and the semantic-drift study (S-rows, 29 tests, normalized labels). U.S. baselines and deviations where a baseline exists; sample sizes (n) where known. Sorted by finding.</p>
 
     <div class="table-shell">
       <table>
@@ -540,6 +738,33 @@ footer p{max-width:58ch}
           <tr><td class="mono">F.02</td><td>Athlete + Paramedic</td><td>Combined images, zero female</td><td class="num">498</td><td><span class="minibar"><i style="--w:100%;--bc:var(--ink)"></i></span></td><td class="delta flat">227 + 271</td><td class="delta down">0 women total</td><td class="delta flat">498</td></tr>
           <tr><td class="mono">F.01</td><td>All images</td><td>Black over-representation factor</td><td class="num">3.7×</td><td><span class="minibar"><i style="--w:100%;--bc:var(--blue)"></i></span></td><td class="delta flat">1.0× (parity)</td><td class="delta up">+270% relative</td><td class="delta flat">—</td></tr>
           <tr><td class="mono">F.04</td><td>All images</td><td>White generation rate vs expected</td><td class="num">0.39×</td><td><span class="minibar"><i style="--w:39%;--bc:var(--red)"></i></span></td><td class="delta flat">1.0× (parity)</td><td class="delta down">−61% relative</td><td class="delta flat">—</td></tr>
+
+          <tr class="group-row"><td colspan="8">Study 02 · Race share by skill framing (29 tests, normalized)</td></tr>
+          <tr><td class="mono">S.01</td><td>Highly skilled</td><td>Black share</td><td class="num">62.1%</td><td><span class="minibar"><i style="--w:62.1%"></i></span></td><td class="delta flat">44.8% (neutral)</td><td class="delta up">+17.3 pts</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.01</td><td>Neutral</td><td>Black share</td><td class="num">44.8%</td><td><span class="minibar"><i style="--w:44.8%"></i></span></td><td class="delta flat">—</td><td class="delta flat">reference</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.01</td><td>Lowly skilled</td><td>Black share</td><td class="num">24.1%</td><td><span class="minibar"><i style="--w:24.1%"></i></span></td><td class="delta flat">44.8% (neutral)</td><td class="delta down">−20.7 pts</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.02</td><td>Lowly skilled</td><td>Asian share</td><td class="num">31.0%</td><td><span class="minibar"><i style="--w:31%;--bc:var(--gold)"></i></span></td><td class="delta flat">13.8% (highly)</td><td class="delta up">+17.2 pts · largest cat.</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.02</td><td>Lowly skilled</td><td>Latina/o share</td><td class="num">24.1%</td><td><span class="minibar"><i style="--w:24.1%;--bc:var(--rust)"></i></span></td><td class="delta flat">6.9% (highly)</td><td class="delta up">+17.2 pts</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.02</td><td>Left-Black departures</td><td>Landing on Asian or Latina/o</td><td class="num">100.0%</td><td><span class="minibar"><i style="--w:100%;--bc:var(--red)"></i></span></td><td class="delta flat">—</td><td class="delta down">5 Asian + 3 Latina/o</td><td class="delta flat">8</td></tr>
+
+          <tr class="group-row"><td colspan="8">Study 02 · Gender by skill framing (29 tests, normalized)</td></tr>
+          <tr><td class="mono">S.03</td><td>Highly skilled</td><td>Female share</td><td class="num">82.8%</td><td><span class="minibar"><i style="--w:82.8%;--bc:var(--plum)"></i></span></td><td class="delta flat">75.9% (neutral)</td><td class="delta up">+6.9 pts</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.03</td><td>Lowly skilled</td><td>Female share</td><td class="num">51.7%</td><td><span class="minibar"><i style="--w:51.7%;--bc:var(--plum)"></i></span></td><td class="delta flat">75.9% (neutral)</td><td class="delta down">−24.2 pts</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.03</td><td>Lowly skilled</td><td>Gender left unspecified</td><td class="num">37.9%</td><td><span class="minibar"><i style="--w:37.9%;--bc:var(--census)"></i></span></td><td class="delta flat">13.8% (neutral)</td><td class="delta up">+24.1 pts</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.04</td><td>Neutral + highly</td><td>Male share</td><td class="num zero">0.0%</td><td><span class="minibar zero"><i></i></span></td><td class="delta flat">—</td><td class="delta down">0 of 58 cells</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.04</td><td>Lowly skilled</td><td>Male share</td><td class="num">6.9%</td><td><span class="minibar"><i style="--w:6.9%;--bc:var(--teal)"></i></span></td><td class="delta flat">0.0% elsewhere</td><td class="delta up">2 of 29 · both construction</td><td class="delta flat">29</td></tr>
+
+          <tr class="group-row"><td colspan="8">Study 02 · Shift rates &amp; model stability (normalized)</td></tr>
+          <tr><td class="mono">S.05</td><td>All tests</td><td>Race shift rate (raw → normalized)</td><td class="num">72.4%</td><td><span class="minibar"><i style="--w:72.4%"></i></span></td><td class="delta flat">79.3% raw</td><td class="delta down">−6.9 pts after cleanup</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.05</td><td>All tests</td><td>Gender shift rate (raw → normalized)</td><td class="num">37.9%</td><td><span class="minibar"><i style="--w:37.9%;--bc:var(--plum)"></i></span></td><td class="delta flat">65.5% raw</td><td class="delta down">−27.6 pts after cleanup</td><td class="delta flat">29</td></tr>
+          <tr><td class="mono">S.05</td><td>gpt-4.1</td><td>Race / gender shift</td><td class="num">42.9%</td><td><span class="minibar"><i style="--w:42.9%;--bc:var(--teal)"></i></span></td><td class="delta flat">gender 14.3%</td><td class="delta flat">most stable model</td><td class="delta flat">7</td></tr>
+          <tr><td class="mono">S.05</td><td>gpt-4o-mini</td><td>Race / gender shift</td><td class="num">71.4%</td><td><span class="minibar"><i style="--w:71.4%;--bc:var(--census)"></i></span></td><td class="delta flat">gender 28.6%</td><td class="delta flat">—</td><td class="delta flat">7</td></tr>
+          <tr><td class="mono">S.05</td><td>gpt-5.2</td><td>Race / gender shift</td><td class="num">60.0%</td><td><span class="minibar"><i style="--w:60%;--bc:var(--census)"></i></span></td><td class="delta flat">gender 60.0%</td><td class="delta flat">refused lowly 5/5</td><td class="delta flat">5</td></tr>
+          <tr><td class="mono">S.05</td><td>claude-4-sonnet</td><td>Race / gender shift</td><td class="num">100.0%</td><td><span class="minibar"><i style="--w:100%;--bc:var(--red)"></i></span></td><td class="delta flat">gender 40.0%</td><td class="delta flat">assigns race only at lowly</td><td class="delta flat">5</td></tr>
+          <tr><td class="mono">S.05</td><td>gemini-2.5-pro</td><td>Race / gender shift</td><td class="num">100.0%</td><td><span class="minibar"><i style="--w:100%;--bc:var(--red)"></i></span></td><td class="delta flat">gender 50.0%</td><td class="delta flat">small n</td><td class="delta flat">2</td></tr>
+          <tr><td class="mono">S.05</td><td>Neurosurgeon</td><td>Race shift rate (highest profession)</td><td class="num">100.0%</td><td><span class="minibar"><i style="--w:100%;--bc:var(--red)"></i></span></td><td class="delta flat">—</td><td class="delta flat">5 of 5 tests</td><td class="delta flat">5</td></tr>
+          <tr><td class="mono">S.05</td><td>Paramedic</td><td>Gender shift rate (lowest profession)</td><td class="num zero">0.0%</td><td><span class="minibar zero"><i></i></span></td><td class="delta flat">—</td><td class="delta flat">0 of 4 tests</td><td class="delta flat">4</td></tr>
+          <tr><td class="mono">S.05</td><td>Model × profession grid</td><td>Coverage of 48 possible cells</td><td class="num">56.3%</td><td><span class="minibar"><i style="--w:56.3%;--bc:var(--census)"></i></span></td><td class="delta flat">—</td><td class="delta down">35%+ combinations untested</td><td class="delta flat">27</td></tr>
         </tbody>
       </table>
     </div>
@@ -547,15 +772,59 @@ footer p{max-width:58ch}
   </div>
 </section>
 
+<!-- ============ APPENDIX B · SIGNIFICANCE ============ -->
+<section class="sig" id="significance">
+  <div class="wrap">
+    <p class="eyebrow">Appendix B · Statistical significance</p>
+    <h2>How sure can we be?</h2>
+    <p class="sub">Two-sided tests against the stated baseline. Exact binomial where counts are known; one-proportion tests elsewhere. Where the source run did not disclose n, a <strong>conservative bound</strong> is shown — the worst-case p-value at the smallest sample size consistent with the data — or the test is marked not determinable. α = 0.05.</p>
+
+    <div class="table-shell">
+      <table>
+        <caption>Significance tests for each audit claim</caption>
+        <thead>
+          <tr>
+            <th class="mono">Ref</th>
+            <th>Comparison</th>
+            <th>Test</th>
+            <th class="num">n basis</th>
+            <th class="num">p-value</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">F.02</td><td>Athlete · 0% female vs 50/50 parity</td><td class="mono">Exact binomial</td><td class="delta flat">n=227 (exact)</td><td class="pv">≈ 10⁻⁶⁸</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">F.02</td><td>Paramedic · 0% female vs 50/50 parity</td><td class="mono">Exact binomial</td><td class="delta flat">n=271 (exact)</td><td class="pv">≈ 10⁻⁸¹</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">F.02</td><td>Combined · 0 women in 498 images</td><td class="mono">Exact binomial</td><td class="delta flat">n=498 (exact)</td><td class="pv">≈ 10⁻¹⁴⁹</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">F.01</td><td>Black 47.7% generated vs ~13% census</td><td class="mono">One-proportion z</td><td class="delta flat">cons. n=100 / floor n≥498</td><td class="pv">&lt; 10⁻²⁴ / &lt; 10⁻¹¹⁶</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">F.04</td><td>White 23.2% generated vs ~60% census</td><td class="mono">One-proportion z</td><td class="delta flat">cons. n=100 / floor n≥498</td><td class="pv">&lt; 10⁻¹³ / &lt; 10⁻⁶²</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">F.03</td><td>Neurosurgeon 94.5% female vs 50/50 parity</td><td class="mono">Exact binomial, min-n bound</td><td class="delta flat">implied n≥18</td><td class="pv">&lt; 0.001</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">F.07</td><td>Tech CEO 56.6% female vs 50/50 parity</td><td class="mono">One-proportion z</td><td class="delta flat">n undisclosed</td><td class="pv">—</td><td class="verdict sig-no">NOT DETERMINABLE ○</td></tr>
+          <tr><td class="mono">F.05</td><td>DALL-E 56.1% male vs Imagen 47.5% male</td><td class="mono">Two-proportion z</td><td class="delta flat">n undisclosed</td><td class="pv">—</td><td class="verdict sig-no">NOT DETERMINABLE ○</td></tr>
+          <tr><td class="mono">F.06</td><td>Basketball 61.7% Black vs ~13% census</td><td class="mono">One-proportion z</td><td class="delta flat">n undisclosed</td><td class="pv">—</td><td class="verdict sig-no">NOT DETERMINABLE ○</td></tr>
+          <tr><td class="mono">F.06</td><td>Basketball 0% Asian / 0% Hispanic</td><td class="mono">Exact binomial</td><td class="delta flat">n undisclosed</td><td class="pv">—</td><td class="verdict sig-no">NOT DETERMINABLE ○</td></tr>
+          <tr class="group-row"><td colspan="6">Study 02 · Semantic drift (paired sign tests, n=29 tests)</td></tr>
+          <tr><td class="mono">S.01</td><td>Black share: highly (62.1%) vs lowly skilled (24.1%)</td><td class="mono">Exact sign test, 11 left / 0 entered</td><td class="delta flat">29 pairs</td><td class="pv">= 0.00098</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">S.03</td><td>Female share: neutral (75.9%) vs lowly skilled (51.7%)</td><td class="mono">Exact sign test, 7 left / 0 entered</td><td class="delta flat">29 pairs</td><td class="pv">= 0.016</td><td class="verdict sig-yes">SIGNIFICANT ●</td></tr>
+          <tr><td class="mono">S.01</td><td>Black share: neutral vs lowly skilled</td><td class="mono">Exact sign test, 8 left / 2 entered</td><td class="delta flat">29 pairs</td><td class="pv">= 0.109</td><td class="verdict sig-no">NOT SIGNIFICANT ○</td></tr>
+          <tr><td class="mono">S.01</td><td>Black share: neutral vs highly skilled</td><td class="mono">Exact sign test, 2 left / 7 entered</td><td class="delta flat">29 pairs</td><td class="pv">= 0.180</td><td class="verdict sig-no">NOT SIGNIFICANT ○</td></tr>
+          <tr><td class="mono">S.02</td><td>Asian absorption: highly vs lowly skilled</td><td class="mono">Exact sign test, 8 entered / 3 left</td><td class="delta flat">29 pairs</td><td class="pv">= 0.227</td><td class="verdict sig-no">NOT SIGNIFICANT ○</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-foot">Conservative bounds ("cons.") assume the smallest plausible sample — the true p-values can only be smaller. "Implied n≥18" is the minimum sample that can produce a 94.5% rate. Not-determinable rows would almost certainly clear α = 0.05 at any realistic sample size, but the honest answer without n is no answer. p-values computed against the source run's reported percentages; baselines are approximate.</p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div>
       <h4>Method</h4>
-      <p>Neutral occupational prompts were submitted to two text-to-image engines (DALL-E and Imagen). Outputs were coded for apparent race and gender, then aggregated per prompt and per engine. All figures are percentages of coded images; n is reported where the source run disclosed it (athlete n=227, paramedic n=271).</p>
+      <p>Study 01: neutral occupational prompts submitted to two text-to-image engines (DALL-E, Imagen); outputs coded for apparent race and gender (athlete n=227, paramedic n=271). Study 02: eight LLMs asked to depict six professions under neutral, "highly skilled," and "lowly skilled" framing (29 tests); coded labels normalized before analysis to merge synonyms. Significance: exact binomial tests where counts are known, paired exact sign tests for Study 02 transitions, conservative one-proportion bounds elsewhere — see Appendix B.</p>
     </div>
     <div>
       <h4>Caveats</h4>
-      <p>"Apparent" race and gender are coder judgments of rendered images, not identities. U.S. population baselines are approximate. Categories marked "all other" are arithmetic remainders the source run did not itemize. Figures describe these engines, these prompts, this run — not all AI image generation.</p>
+      <p>"Apparent" race and gender are coder judgments, not identities. U.S. baselines are approximate; "all other" rows are arithmetic remainders. Study 02: n=29 with one sample per cell, 56% coverage of the model×profession grid, six "lowly" cells affected by model refusals, and one multi-option baseline arbitrarily coded. Only findings marked SIGNIFICANT in Appendix B clear α = 0.05; the rest are directional. Figures describe these systems, these prompts, these runs — not all AI.</p>
     </div>
   </div>
 </footer>
